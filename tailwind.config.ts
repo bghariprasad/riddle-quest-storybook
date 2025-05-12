@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				whimsy: {
+					blue: '#D3E4FD',
+					green: '#F2FCE2',
+					yellow: '#FEF7CD',
+					orange: '#FEC6A1',
+					purple: '#E5DEFF',
+					pink: '#FFDEE2',
+					peach: '#FDE1D3',
+					gray: '#F1F0FB',
+					dark: {
+						purple: '#1A1F2C',
+						gray: '#403E43',
+						charcoal: '#221F26'
+					}
 				}
 			},
 			borderRadius: {
@@ -69,26 +85,68 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+				"accordion-down": {
+					from: { height: "0" },
+					to: { height: "var(--radix-accordion-content-height)" },
 				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+				"accordion-up": {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: "0" },
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				sway: {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' }
+				},
+				blinking: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(-2deg)' },
+					'50%': { transform: 'rotate(2deg)' }
+				},
+				"book-open": {
+					'0%': { transform: 'rotateY(0deg)', transformOrigin: 'left' },
+					'100%': { transform: 'rotateY(-180deg)', transformOrigin: 'left' }
+				},
+				"book-close": {
+					'0%': { transform: 'rotateY(-180deg)', transformOrigin: 'left' },
+					'100%': { transform: 'rotateY(0deg)', transformOrigin: 'left' }
+				},
+				"confetti-slow": {
+					'0%': { transform: 'translateY(0) rotate(0)', opacity: '1' },
+					'100%': { transform: 'translateY(600px) rotate(90deg)', opacity: '0' }
+				},
+				"confetti-medium": {
+					'0%': { transform: 'translateY(0) rotate(0)', opacity: '1' },
+					'100%': { transform: 'translateY(600px) rotate(360deg)', opacity: '0' }
+				},
+				"confetti-fast": {
+					'0%': { transform: 'translateY(0) rotate(0)', opacity: '1' },
+					'100%': { transform: 'translateY(600px) rotate(720deg)', opacity: '0' }
+				},
+				"star-twinkle": {
+					'0%, 100%': { opacity: '0.2', transform: 'scale(0.8)' },
+					'50%': { opacity: '1', transform: 'scale(1)' }
 				}
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+				"float": "float 6s ease-in-out infinite",
+				"sway": "sway 6s ease-in-out infinite",
+				"blinking": "blinking 3s ease-in-out infinite",
+				"wiggle": "wiggle 1s ease-in-out",
+				"book-open": "book-open 1.5s ease-out forwards",
+				"book-close": "book-close 1.5s ease-out forwards",
+				"confetti-slow": "confetti-slow 5s ease-out forwards",
+				"confetti-medium": "confetti-medium 4s ease-out forwards",
+				"confetti-fast": "confetti-fast 3s ease-out forwards",
+				"star-twinkle": "star-twinkle 4s ease-in-out infinite"
 			}
 		}
 	},
