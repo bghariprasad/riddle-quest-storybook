@@ -45,7 +45,7 @@ export function MagicalBook() {
   const currentRiddle = riddles[currentRiddleIndex];
 
   const toggleBook = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(true);
     if (isOpen) {
       resetRiddle();
     }
@@ -79,16 +79,17 @@ export function MagicalBook() {
     setCurrentRiddleIndex((prevIndex) => (prevIndex - 1 + riddles.length) % riddles.length);
   };
 
+  const closeBook = () => {
+    setIsOpen(false);
+    resetRiddle();
+  };
+
   return (
     <div className="relative w-full max-w-3xl py-6">
       <Confetti isActive={showConfetti} />
       
       <div className="book-container w-full max-w-2xl mx-auto">
-        <div 
-          className={`book-cover transition-all duration-1000 ease-in-out ${
-            isOpen ? 'animate-book-open' : 'animate-book-close'
-          } bg-gradient-to-r from-amber-700 to-amber-600 dark:from-indigo-900 dark:to-purple-800 rounded-lg shadow-2xl`}
-        >
+        <div className="bg-gradient-to-r from-amber-700 to-amber-600 dark:from-indigo-900 dark:to-purple-800 rounded-lg shadow-2xl">
           {/* Book Cover */}
           {!isOpen && (
             <div className="relative p-6 h-[400px] md:h-[500px] rounded-lg border-4 border-amber-800/30 dark:border-purple-700/30 flex flex-col justify-center items-center">
@@ -121,7 +122,7 @@ export function MagicalBook() {
                 <Button 
                   variant="ghost" 
                   size="icon"
-                  onClick={toggleBook}
+                  onClick={closeBook}
                   className="rounded-full hover:bg-amber-200/50 dark:hover:bg-purple-800/50"
                 >
                   <BookOpen className="h-6 w-6 text-amber-800 dark:text-purple-200" />
