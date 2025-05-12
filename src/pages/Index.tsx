@@ -27,7 +27,7 @@ const Index = () => {
         <ThemeToggle />
       </header>
       
-      <main className="flex-grow flex flex-col items-center justify-center px-4 py-8">
+      <main className="flex-grow flex flex-col items-center justify-center px-4 py-8 overflow-x-hidden">
         <MagicalBook />
       </main>
       

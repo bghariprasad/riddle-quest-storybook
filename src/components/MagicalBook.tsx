@@ -80,10 +80,10 @@ export function MagicalBook() {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-3xl py-6">
+    <div className="relative w-full max-w-3xl py-6">
       <Confetti isActive={showConfetti} />
       
-      <div className="book-container mx-auto w-full max-w-2xl">
+      <div className="book-container w-full max-w-2xl mx-auto">
         <div 
           className={`book-cover transition-all duration-1000 ease-in-out ${
             isOpen ? 'animate-book-open' : 'animate-book-close'
@@ -130,7 +130,7 @@ export function MagicalBook() {
               </div>
               
               <div className="flex-grow flex flex-col">
-                <div className="storybook-page flex-grow mb-6">
+                <div className="storybook-page flex-grow mb-6 overflow-y-auto">
                   <p className="text-lg md:text-xl mb-8 font-medium text-gray-800 dark:text-gray-200">
                     {currentRiddle.question}
                   </p>
@@ -172,7 +172,7 @@ export function MagicalBook() {
                   )}
                 </div>
                 
-                <div className="flex justify-between">
+                <div className="flex flex-wrap justify-between gap-2">
                   <Button
                     variant="ghost"
                     onClick={prevRiddle}
@@ -181,7 +181,7 @@ export function MagicalBook() {
                     Previous Riddle
                   </Button>
                   
-                  <div className="flex space-x-2">
+                  <div className="flex flex-wrap gap-2">
                     {isCorrect !== true && (
                       <>
                         <Button
