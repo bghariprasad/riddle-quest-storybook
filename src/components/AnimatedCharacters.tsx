@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Owl, Raccoon, Goblin, Sparkles } from 'lucide-react';
+import { Bird, Cat, Ghost } from 'lucide-react';
 
 interface AnimatedCharactersProps {
   isCorrect: boolean | null;
@@ -17,7 +17,7 @@ export function AnimatedCharacters({ isCorrect }: AnimatedCharactersProps) {
           ${isCorrect === false ? 'opacity-50 scale-90' : 'opacity-100'}
           hover:bg-whimsy-purple/90 dark:bg-indigo-900/70
         `}>
-          <Owl 
+          <Bird 
             className={`
               h-12 w-12 md:h-16 md:w-16 text-indigo-800 dark:text-indigo-200
               ${isCorrect === true ? 'animate-blinking' : ''}
@@ -26,7 +26,7 @@ export function AnimatedCharacters({ isCorrect }: AnimatedCharactersProps) {
           />
         </div>
         {isCorrect === true && (
-          <Sparkles className="absolute -top-2 -right-2 h-5 w-5 text-yellow-400 animate-star-twinkle" />
+          <span className="absolute -top-2 -right-2 text-yellow-400 animate-star-twinkle">✨</span>
         )}
         <div className="absolute -bottom-2 left-0 right-0 text-center text-xs font-semibold opacity-80">Wise Owl</div>
       </div>
@@ -40,7 +40,7 @@ export function AnimatedCharacters({ isCorrect }: AnimatedCharactersProps) {
           hover:bg-whimsy-orange/90 dark:bg-orange-900/70
           animate-sway
         `}>
-          <Raccoon 
+          <Cat
             className={`
               h-12 w-12 md:h-16 md:w-16 text-amber-800 dark:text-amber-200
               ${isCorrect === true ? 'animate-wiggle' : ''}
@@ -49,7 +49,7 @@ export function AnimatedCharacters({ isCorrect }: AnimatedCharactersProps) {
           />
         </div>
         {isCorrect === true && (
-          <Sparkles className="absolute -top-2 -right-2 h-5 w-5 text-yellow-400 animate-star-twinkle" />
+          <span className="absolute -top-2 -right-2 text-yellow-400 animate-star-twinkle">✨</span>
         )}
         <div className="absolute -bottom-2 left-0 right-0 text-center text-xs font-semibold opacity-80">Curious Raccoon</div>
       </div>
@@ -62,7 +62,7 @@ export function AnimatedCharacters({ isCorrect }: AnimatedCharactersProps) {
           ${isCorrect === false ? 'opacity-50 scale-90' : 'opacity-100'}
           hover:bg-whimsy-green/90 dark:bg-green-900/70
         `}>
-          <Goblin 
+          <Ghost 
             className={`
               h-12 w-12 md:h-16 md:w-16 text-emerald-800 dark:text-emerald-200
               ${isCorrect === false ? 'animate-wiggle' : ''}
@@ -71,7 +71,7 @@ export function AnimatedCharacters({ isCorrect }: AnimatedCharactersProps) {
           />
         </div>
         {isCorrect === true && (
-          <Sparkles className="absolute -top-2 -right-2 h-5 w-5 text-yellow-400 animate-star-twinkle" />
+          <span className="absolute -top-2 -right-2 text-yellow-400 animate-star-twinkle">✨</span>
         )}
         <div className="absolute -bottom-2 left-0 right-0 text-center text-xs font-semibold opacity-80">Mischievous Goblin</div>
       </div>
