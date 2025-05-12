@@ -41,6 +41,7 @@ export function MagicalBook() {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   const currentRiddle = riddles[currentRiddleIndex];
 
@@ -67,6 +68,7 @@ export function MagicalBook() {
     setUserAnswer('');
     setIsCorrect(null);
     setShowHint(false);
+    setShowAnswer(false);
   };
 
   const nextRiddle = () => {
@@ -144,6 +146,14 @@ export function MagicalBook() {
                     </div>
                   )}
                   
+                  {showAnswer && (
+                    <div className="bg-blue-100/50 dark:bg-blue-900/50 p-3 rounded-lg mb-6">
+                      <p className="text-sm italic text-blue-800 dark:text-blue-200">
+                        Answer: {currentRiddle.answer}
+                      </p>
+                    </div>
+                  )}
+                  
                   <AnimatedCharacters isCorrect={isCorrect} />
                   
                   {isCorrect === true ? (
@@ -191,6 +201,13 @@ export function MagicalBook() {
                           className="text-amber-800 dark:text-purple-200 border-amber-300 dark:border-purple-700"
                         >
                           Give me a hint
+                        </Button>
+                        <Button
+                          variant="outline"
+                          onClick={() => setShowAnswer(true)}
+                          className="text-blue-800 dark:text-blue-200 border-blue-300 dark:border-blue-700"
+                        >
+                          Show Answer
                         </Button>
                         <Button
                           variant="default"
