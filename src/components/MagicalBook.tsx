@@ -5,7 +5,7 @@ import { Confetti } from './Confetti';
 import { AnimatedCharacters } from './AnimatedCharacters';
 import { Button } from '@/components/ui/button';
 
-// Our collection of riddles
+// Our collection of riddles (expanded to 20)
 const riddles = [
   {
     question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
@@ -31,6 +31,81 @@ const riddles = [
     question: "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
     answer: "map",
     hint: "I help you find your way."
+  },
+  {
+    question: "I'm light as a feather, but the strongest person can't hold me for more than a few minutes. What am I?",
+    answer: "breath",
+    hint: "You do this automatically."
+  },
+  {
+    question: "What gets wetter as it dries?",
+    answer: "towel",
+    hint: "You use me after a shower."
+  },
+  {
+    question: "I'm tall when I'm young, and short when I'm old. What am I?",
+    answer: "candle",
+    hint: "I provide light as I melt away."
+  },
+  {
+    question: "What has many teeth but can't bite?",
+    answer: "comb",
+    hint: "I help style your hair."
+  },
+  {
+    question: "What can travel around the world while staying in a corner?",
+    answer: "stamp",
+    hint: "I help mail reach its destination."
+  },
+  {
+    question: "What has a neck but no head?",
+    answer: "bottle",
+    hint: "You drink from me."
+  },
+  {
+    question: "What can you break, even if you never pick it up or touch it?",
+    answer: "promise",
+    hint: "It's about keeping your word."
+  },
+  {
+    question: "What goes up but never comes down?",
+    answer: "age",
+    hint: "It increases every year."
+  },
+  {
+    question: "What can you catch but not throw?",
+    answer: "cold",
+    hint: "It makes you sneeze."
+  },
+  {
+    question: "What has hands but can't clap?",
+    answer: "clock",
+    hint: "I help you tell time."
+  },
+  {
+    question: "What can fill a room but takes up no space?",
+    answer: "light",
+    hint: "It helps you see in the dark."
+  },
+  {
+    question: "What has many keys but can't open a single lock?",
+    answer: "piano",
+    hint: "I make music when played."
+  },
+  {
+    question: "What has a bottom at the top?",
+    answer: "legs",
+    hint: "You stand on them."
+  },
+  {
+    question: "What starts with 'e', ends with 'e', but only contains one letter?",
+    answer: "envelope",
+    hint: "You put mail in me."
+  },
+  {
+    question: "What has 88 keys but can't open a single door?",
+    answer: "piano",
+    hint: "I'm a musical instrument."
   }
 ];
 
@@ -228,6 +303,13 @@ export function MagicalBook() {
                       </Button>
                     )}
                   </div>
+                </div>
+                
+                {/* Riddle Counter */}
+                <div className="mt-6 text-center text-sm text-amber-800/80 dark:text-purple-200/80">
+                  <p>
+                    Riddle {currentRiddleIndex + 1}/{riddles.length}
+                  </p>
                 </div>
               </div>
             </div>
